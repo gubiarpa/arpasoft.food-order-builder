@@ -3,14 +3,14 @@ import { ElegirPedido } from './ElegirPedido';
 
 export const ArmaPedido = () => {
 
-  const [comidas, setComidas] = useState([
+  const [comidas, ] = useState([
     'Salchipapa',
     'Hamburguesa',
   ]);
 
   const [comidaSelected, setComidaSelected] = useState(comidas[0]);
   
-  const [cremas, setCremas] = useState([
+  const [cremas, ] = useState([
     'Ketchup',
     'Mostaza',
     'Mayonesa',
