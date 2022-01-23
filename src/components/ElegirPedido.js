@@ -1,6 +1,8 @@
 import React from 'react';
+import { ListaCremas } from './ListaCremas';
+import { ListaPedidos } from './ListaPedidos';
 
-export const ElegirPedido = ({comidas, cremas}) => {
+export const ElegirPedido = ({ comidas, setComidaSelected, cremas, setCremasSelected}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,29 +13,8 @@ export const ElegirPedido = ({comidas, cremas}) => {
     <>
       <h3>Elige tu pedido</h3>
       <form onSubmit={handleSubmit}>
-        <div className="block-pedido">
-          <label>Pedido:</label>
-          <br />
-          <select>
-            {
-              comidas.map(comida => {
-                return <option key={comida} value={comida}>{comida}</option>
-              })
-            }
-          </select>
-        </div>
-        <div className="block-pedido">
-          <label>Cremas:</label>
-          <br />
-          {
-            cremas.map(crema => {
-              return  <div key={crema}>
-                        <input type="checkbox" id={crema} name={crema} />
-                        <label htmlFor={crema}>{crema}</label>
-                      </div>
-            })
-          }
-        </div>
+        <ListaPedidos comidas={comidas} setComidaSelected={setComidaSelected} />
+        <ListaCremas cremas={cremas} setCremasSelected={setCremasSelected} />
       </form>
     </>
   );

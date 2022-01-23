@@ -8,6 +8,8 @@ export const ArmaPedido = () => {
     'Hamburguesa',
   ]);
 
+  const [comidaSelected, setComidaSelected] = useState(comidas[0]);
+  
   const [cremas, setCremas] = useState([
     'Ketchup',
     'Mostaza',
@@ -15,13 +17,17 @@ export const ArmaPedido = () => {
     'Ají',
   ]);
 
+  const [cremasSelected, setCremasSelected] = useState([]);
+
   return (
     <>
       <h2>Arma tu pedido</h2>
+      <p>Pedido elegido: {comidaSelected}</p>
       <div>
         <ElegirPedido
-          comidas={comidas}
-          cremas={cremas} />
+          comidas={comidas} setComidaSelected={setComidaSelected}
+          cremas={cremas} setCremasSelected={setCremasSelected}
+        />
       </div>
     </>
   );
