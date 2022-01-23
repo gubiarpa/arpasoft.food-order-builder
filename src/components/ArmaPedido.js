@@ -22,11 +22,10 @@ export const ArmaPedido = () => {
   return (
     <>
       <h2>Arma tu pedido</h2>
-      <p>Pedido elegido: {comidaSelected}</p>
       <div>
         <ElegirPedido
           comidas={comidas} setComidaSelected={setComidaSelected}
-          cremas={cremas} setCremasSelected={setCremasSelected}
+          cremas={cremas} cremasSelected={cremasSelected} setCremasSelected={setCremasSelected}
         />
       </div>
     </>
